@@ -22,6 +22,7 @@ const config: Config = {
         heading: ["var(--font-heading)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
+        testimonial: ["var(--font-testimonial)", "monospace"],
       },
       letterSpacing: {
         "demco-tight": "-0.02em",
@@ -30,6 +31,15 @@ const config: Config = {
       },
       borderRadius: {
         "pill": "300px",
+      },
+      animation: {
+        'reveal-up': 'revealUp 0.8s ease-out forwards',
+      },
+      keyframes: {
+        revealUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        }
       }
     },
   },

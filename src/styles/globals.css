@@ -27,8 +27,15 @@ p {
 }
 
 @layer components {
+
+  /* Testimonial Typography (Courier Prime) */
+  .font-testimonial {
+    font-family: var(--font-testimonial);
+    @apply uppercase tracking-widest font-bold;
+  }
+
   .btn-pill {
-    @apply rounded-pill px-8 py-5 uppercase font-mono text-sm tracking-widest transition-all duration-300 inline-block text-center border-2;
+    @apply rounded-pill px-8 py-5 uppercase font-testimonial text-sm tracking-widest transition-all duration-300 inline-block text-center border-2;
   }
 
   .btn-primary {
@@ -40,7 +47,21 @@ p {
   }
 
   .section-label {
-    @apply font-mono uppercase text-xs tracking-[0.2em] mb-4 text-demco-purple opacity-70;
+    @apply font-testimonial uppercase text-xs tracking-[0.2em] mb-4 text-demco-purple opacity-70;
+  }
+
+  /* Reveal Animations */
+  .reveal-on-scroll {
+    @apply opacity-0 translate-y-8;
+  }
+
+  .is-revealed {
+    @apply animate-reveal-up;
+  }
+
+  /* Image Animation: Black to Color */
+  .img-animate {
+    @apply grayscale transition-all duration-700 hover:grayscale-0 cursor-pointer;
   }
 }
 
@@ -51,4 +72,26 @@ p {
 
 .section-padding {
   @apply py-24 md:py-32;
+}
+
+/* Masonry Overrides */
+.my-masonry-grid {
+  display: -webkit-box;
+  /* Not needed if lib handles it */
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -30px;
+  /* gutter size offset */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 30px;
+  /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style for individual masonry items */
+.my-masonry-grid_column>div {
+  margin-bottom: 30px;
 }
