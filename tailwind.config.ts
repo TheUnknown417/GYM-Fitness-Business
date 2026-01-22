@@ -9,29 +9,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
+        demco: {
+          cream: "#FFFCF4",
+          purple: "#483856",
+          olive: "#ACAA85",
+          gray: "#ADAEAE",
           black: "#000000",
-          white: "#FFFFFF",
-        },
-        cream: "#F5F1ED",
-        charcoal: "#2D2D2D",
-        accent: "#FF6B35",
-        "accent-alt": "#4A90E2",
-        gray: {
-          light: "#E5E5E5",
-          medium: "#6B6B6B",
-        },
+          offwhite: "#FDFCFA",
+        }
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        heading: ["var(--font-heading)", "sans-serif"],
+        body: ["var(--font-body)", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       letterSpacing: {
-        tight: "-0.02em",
-        wide: "0.1em",
+        "demco-tight": "-0.02em",
+        "demco-wide": "0.1em",
+        "demco-widest": "0.2em",
       },
+      borderRadius: {
+        "pill": "300px",
+      }
     },
   },
   plugins: [],
 };
 export default config;
-

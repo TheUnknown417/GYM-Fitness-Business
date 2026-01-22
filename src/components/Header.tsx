@@ -7,53 +7,74 @@ import { Menu, X } from 'lucide-react';
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const navLinks = [
+    { name: 'About', href: '/about' },
+    { name: 'Memberships', href: '/memberships' },
+    { name: 'Testimonials', href: '/testimonials' },
+    { name: 'Contact', href: '/contact' },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold">
+    <header className="sticky top-0 z-50 bg-demco-cream/80 backdrop-blur-md border-b border-demco-purple/10">
+      <div className="container-demco flex items-center justify-between py-6">
+        <Link href="/" className="text-2xl font-heading tracking-widest text-demco-purple">
           PEAK FITNESS
         </Link>
 
         {/* DESKTOP NAV */}
-        <nav className="hidden md:flex items-center gap-8">
-          <Link href="/about" className="hover:underline">About</Link>
-          <Link href="/memberships" className="hover:underline">Memberships</Link>
-          <Link href="/testimonials" className="hover:underline">Testimonials</Link>
-          <Link href="/contact" className="hover:underline">Contact</Link>
+        <nav className="hidden md:flex items-center gap-10">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="font-mono text-sm uppercase tracking-widest text-demco-purple hover:text-demco-olive transition-colors"
+            >
+              {link.name}
+            </Link>
+          ))}
+          <Link
+            href="/contact"
+            className="btn-pill btn-primary !py-3 !px-6"
+          >
+            Book Now
+          </Link>
         </nav>
-
-        <Link
-          href="/contact"
-          className="hidden md:block bg-black text-white px-6 py-2 font-semibold hover:bg-gray-800 transition"
-        >
-          Book Now
-        </Link>
 
         {/* MOBILE TOGGLE */}
         <button
-          className="md:hidden"
+          className="md:hidden text-demco-purple"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* MOBILE MENU */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <nav className="flex flex-col p-4 space-y-4">
-            <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
-            <Link href="/memberships" onClick={() => setMobileMenuOpen(false)}>Memberships</Link>
-            <Link href="/testimonials" onClick={() => setMobileMenuOpen(false)}>Testimonials</Link>
-            <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+        <div className="md:hidden bg-demco-cream h-screen w-full fixed inset-0 z-40 flex flex-col items-center justify-center space-y-8">
+          <button
+            className="absolute top-8 right-8 text-demco-purple"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <X size={32} />
+          </button>
+          {navLinks.map((link) => (
             <Link
-              href="/contact"
-              className="bg-black text-white px-6 py-3 text-center font-semibold"
+              key={link.name}
+              href={link.href}
+              className="font-heading text-3xl uppercase tracking-widest text-demco-purple"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Book Now
+              {link.name}
             </Link>
-          </nav>
+          ))}
+          <Link
+            href="/contact"
+            className="btn-pill btn-primary text-xl mt-8"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Book Now
+          </Link>
         </div>
       )}
     </header>

@@ -4,33 +4,51 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 20 14% 91%;
-    --accent: 14 100% 60%;
-    --muted: 0 0% 96%;
-    --border: 0 0% 89%;
+    --background: #FFFCF4;
+    --foreground: #483856;
   }
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: white;
-  color: black;
+  @apply bg-demco-cream text-demco-purple selection:bg-demco-purple selection:text-white;
 }
 
-h1, h2, h3 {
-  text-transform: lowercase;
-  font-weight: 700;
-  line-height: 1.2;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading uppercase tracking-demco-widest font-bold leading-tight;
 }
 
-.section-label {
-  text-transform: lowercase;
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+p {
+  @apply font-body leading-relaxed text-opacity-90;
+}
+
+@layer components {
+  .btn-pill {
+    @apply rounded-pill px-8 py-5 uppercase font-mono text-sm tracking-widest transition-all duration-300 inline-block text-center border-2;
+  }
+
+  .btn-primary {
+    @apply bg-demco-black text-demco-offwhite border-demco-black hover:bg-transparent hover:text-demco-black;
+  }
+
+  .btn-secondary {
+    @apply border-demco-olive text-demco-olive hover:bg-demco-olive hover:text-white;
+  }
+
+  .section-label {
+    @apply font-mono uppercase text-xs tracking-[0.2em] mb-4 text-demco-purple opacity-70;
+  }
+}
+
+/* Custom Spacing Patterns */
+.container-demco {
+  @apply max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24;
+}
+
+.section-padding {
+  @apply py-24 md:py-32;
 }
