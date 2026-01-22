@@ -2,25 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 @layer base {
-  * {
-    @apply border-gray-light;
-  }
-  
-  body {
-    @apply bg-primary-white text-primary-black font-sans antialiased;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 20 14% 91%;
+    --accent: 14 100% 60%;
+    --muted: 0 0% 96%;
+    --border: 0 0% 89%;
   }
 }
 
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: white;
+  color: black;
+}
+
+h1, h2, h3 {
+  text-transform: lowercase;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section-label {
+  text-transform: lowercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}

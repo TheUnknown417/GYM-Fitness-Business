@@ -1,117 +1,108 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
-import CoachCard from "@/components/CoachCard";
-import { coaches } from "@/lib/data/coaches";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { images } from '@/lib/data';
 
 export default function AboutPage() {
   return (
-    <>
-      {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-charcoal">
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-primary-white">
+    <main>
+      {/* HERO SECTION */}
+      <section className="relative h-96 flex items-center justify-center">
+        <Image
+          src={images.hero.about}
+          alt="About Peak Fitness"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative z-10 text-center text-white px-4">
           <motion.h1
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold lowercase tracking-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-6xl font-bold"
           >
             about us
           </motion.h1>
         </div>
       </section>
 
-      {/* Mission & Values */}
-      <section className="py-16 lg:py-24 bg-primary-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto space-y-12"
-          >
-            <motion.div variants={fadeInUp} className="text-center">
-              <p className="text-xs uppercase tracking-wide text-gray-medium mb-4">
-                why we move
-              </p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold lowercase tracking-tight mb-6">
-                More than a workout. It's a lifestyle.
-              </h2>
-              <p className="text-lg leading-relaxed text-gray-medium">
-                At [Studio Name], you're surrounded by passionate coaches who are
-                dedicated to helping you become a better version of yourself. We
-                focus on movement, mobility, agility, and strength training in
-                the most efficient, safe, and fun way possible.
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={fadeInUp}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
-            >
-              <div>
-                <p className="text-xs uppercase tracking-wide text-gray-medium mb-4">
-                  Our Goals
-                </p>
-                <p className="text-base leading-relaxed text-gray-medium">
-                  We create customized workout plans that fit your body and needs,
-                  tracking every workout. Weekly check-ins keep you accountable.
-                  We discuss goal setting, nutrition habits, and your overall
-                  well-being—because health is more than just your workout.
-                </p>
-              </div>
-
-              <div>
-                <p className="text-xs uppercase tracking-wide text-gray-medium mb-4">
-                  Our Mission
-                </p>
-                <p className="text-base leading-relaxed text-gray-medium">
-                  [Studio Name] is filled with laughter, love, strength, and fun.
-                  Our community is what makes us special. You won't find another
-                  place where you develop strength AND build genuine friendships.
-                  Everyone who walks through our door becomes part of the family.
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
+      {/* MISSION SECTION */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="section-label">why we move</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8">
+            more than a workout.<br />
+            it's a lifestyle.
+          </h2>
+          <p className="text-lg text-gray-700 mb-6">
+            At Peak Fitness, you're surrounded by passionate coaches who are
+            dedicated to helping you become a better version of yourself. We
+            focus on movement, mobility, agility, and strength training in
+            the most efficient, safe, and fun way possible.
+          </p>
+          <p className="text-lg text-gray-700">
+            This isn't just about looking good—it's about feeling amazing,
+            performing better, and building sustainable health habits that
+            last a lifetime.
+          </p>
         </div>
       </section>
 
-      {/* Coaches Section */}
-      <section className="py-16 lg:py-24 bg-cream">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeInUp}
-            className="mb-12"
-          >
-            <p className="text-xs uppercase tracking-wide text-gray-medium mb-4">
-              meet our coaches
+      {/* GOALS & MISSION */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+          <div>
+            <p className="section-label">our goals</p>
+            <p className="text-lg text-gray-700">
+              We create customized workout plans that fit your body and needs,
+              tracking every workout. Weekly check-ins keep you accountable.
+              We discuss goal setting, nutrition habits, and your overall
+              well-being—because health is more than just your workout.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
-          >
-            {coaches.map((coach) => (
-              <motion.div key={coach.id} variants={fadeInUp}>
-                <CoachCard coach={coach} />
-              </motion.div>
-            ))}
-          </motion.div>
+          <div>
+            <p className="section-label">our mission</p>
+            <p className="text-lg text-gray-700">
+              Peak Fitness is filled with laughter, love, strength, and fun.
+              Our community is what makes us special. You won't find another
+              place where you develop strength AND build genuine friendships.
+              Everyone who walks through our door becomes part of the family.
+            </p>
+          </div>
         </div>
       </section>
-    </>
+
+      {/* COACHES */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <p className="section-label text-center">meet our coaches</p>
+
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {[
+              { name: 'sarah johnson', role: 'OWNER + TRAINER', img: images.coaches[0] },
+              { name: 'mike chen', role: 'TRAINER', img: images.coaches[1] },
+              { name: 'alex rivera', role: 'TRAINER', img: images.coaches[2] },
+            ].map((coach, i) => (
+              <div key={i} className="group">
+                <div className="relative h-96 mb-4 overflow-hidden">
+                  <Image
+                    src={coach.img}
+                    alt={coach.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-1">{coach.name}</h3>
+                <p className="text-sm text-gray-600">{coach.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
-

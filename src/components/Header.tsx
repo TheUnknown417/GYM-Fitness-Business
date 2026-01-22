@@ -1,97 +1,61 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+import Link from 'next/link';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = [
-    { href: "/about", label: "About" },
-    { href: "/memberships", label: "Memberships" },
-    { href: "/wellness-hub", label: "Wellness Hub" },
-    { href: "/testimonials", label: "Testimonials" },
-    { href: "/contact", label: "Contact" },
-  ];
-
   return (
-    <header className="sticky top-0 z-50 bg-primary-white border-b border-gray-light">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link href="/" className="text-2xl font-bold lowercase tracking-tight">
-            [Studio Name]
-          </Link>
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <Link href="/" className="text-2xl font-bold">
+          PEAK FITNESS
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-primary-black hover:text-accent transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+        {/* DESKTOP NAV */}
+        <nav className="hidden md:flex items-center gap-8">
+          <Link href="/about" className="hover:underline">About</Link>
+          <Link href="/memberships" className="hover:underline">Memberships</Link>
+          <Link href="/testimonials" className="hover:underline">Testimonials</Link>
+          <Link href="/contact" className="hover:underline">Contact</Link>
+        </nav>
 
-          {/* Book Now Button */}
-          <div className="hidden md:block">
+        <Link
+          href="/contact"
+          className="hidden md:block bg-black text-white px-6 py-2 font-semibold hover:bg-gray-800 transition"
+        >
+          Book Now
+        </Link>
+
+        {/* MOBILE TOGGLE */}
+        <button
+          className="md:hidden"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* MOBILE MENU */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200">
+          <nav className="flex flex-col p-4 space-y-4">
+            <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
+            <Link href="/memberships" onClick={() => setMobileMenuOpen(false)}>Memberships</Link>
+            <Link href="/testimonials" onClick={() => setMobileMenuOpen(false)}>Testimonials</Link>
+            <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
             <Link
-              href="#trial-class"
-              className="px-6 py-2.5 bg-accent text-primary-white font-semibold text-sm uppercase tracking-wide hover:bg-accent/90 transition-colors"
+              href="/contact"
+              className="bg-black text-white px-6 py-3 text-center font-semibold"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Book Now
             </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-primary-black"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </nav>
         </div>
-      </nav>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-primary-white border-t border-gray-light"
-          >
-            <div className="container mx-auto px-4 py-6 space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-base font-medium text-primary-black hover:text-accent transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link
-                href="#trial-class"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block mt-6 px-6 py-3 bg-accent text-primary-white font-semibold text-sm uppercase tracking-wide text-center hover:bg-accent/90 transition-colors"
-              >
-                Book Now
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      )}
     </header>
   );
 }
-

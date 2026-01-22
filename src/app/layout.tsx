@@ -7,9 +7,9 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "[Studio Name] | Personal Training & Fitness Studio",
+  title: "Peak Fitness | Personal Training & Fitness Studio",
   description:
-    "Build strength and move better with [Studio Name]. Personal training, semi-private sessions, and group classes. First class free!",
+    "Build strength and move better with Peak Fitness. Personal training, semi-private sessions, and group classes. First class free!",
   keywords: [
     "personal training",
     "fitness studio",

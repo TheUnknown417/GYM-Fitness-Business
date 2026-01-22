@@ -1,174 +1,136 @@
-"use client";
+'use client';
 
-import ContactForm from "@/components/ContactForm";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
-
-const galleryImages = [
-  "https://source.unsplash.com/800x600/?gym-interior-equipment",
-  "https://source.unsplash.com/800x600/?fitness-studio-space",
-  "https://source.unsplash.com/800x600/?gym-training-area",
-  "https://source.unsplash.com/800x600/?personal-training-room",
-  "https://source.unsplash.com/800x600/?gym-weights-equipment",
-  "https://source.unsplash.com/800x600/?fitness-studio",
-];
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { images } from '@/lib/data';
 
 export default function ContactPage() {
   return (
-    <>
-      {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-charcoal">
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-primary-white">
+    <main>
+      {/* HERO SECTION */}
+      <section className="relative h-96 flex items-center justify-center">
+        <Image
+          src={images.hero.main}
+          alt="Contact Peak Fitness"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative z-10 text-center text-white px-4">
           <motion.h1
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold lowercase tracking-tight mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-6xl font-bold"
           >
-            Let's get started
+            let's get started
           </motion.h1>
-          <motion.p
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-            className="text-lg text-white/90 max-w-2xl mx-auto"
-          >
-            Have questions, suggestions or just want to say hello? Fill out the
-            form below and we'll reach out!
-          </motion.p>
         </div>
       </section>
 
-      {/* Contact Form & Info */}
-      <section className="py-16 lg:py-24 bg-primary-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16"
-          >
-            {/* Contact Form */}
-            <motion.div variants={fadeInUp}>
-              <h2 className="text-2xl sm:text-3xl font-bold lowercase tracking-tight mb-8">
-                Send us a message
-              </h2>
-              <ContactForm />
-            </motion.div>
+      {/* CONTACT CONTENT */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+          {/* CONTACT FORM */}
+          <div>
+            <h2 className="text-3xl font-bold mb-8">send us a message</h2>
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold uppercase">First Name</label>
+                  <input type="text" className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" required />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold uppercase">Last Name</label>
+                  <input type="text" className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" required />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-semibold uppercase">Email Address</label>
+                <input type="email" className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" required />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-semibold uppercase">How can we help?</label>
+                <textarea rows={4} className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" required></textarea>
+              </div>
+              <button className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition">
+                Send Message
+              </button>
+            </form>
+          </div>
 
-            {/* Contact Info */}
-            <motion.div variants={fadeInUp} className="space-y-8">
-              <div>
-                <div className="flex items-start gap-4 mb-4">
-                  <MapPin className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-xs uppercase tracking-wide text-gray-medium mb-2">
-                      Location
-                    </h3>
-                    <address className="not-italic text-base leading-relaxed">
-                      2521 4th Ave
-                      <br />
-                      Seattle, WA 98121
-                    </address>
-                    <Link
-                      href="https://maps.google.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-accent hover:underline mt-2 inline-block"
-                    >
-                      Get Directions
-                    </Link>
+          {/* CONTACT INFO */}
+          <div className="space-y-12">
+            <div>
+              <div className="flex items-start gap-4 mb-4">
+                <MapPin className="mt-1" />
+                <div>
+                  <p className="section-label">location</p>
+                  <p className="text-lg">
+                    2521 4th Ave<br />
+                    Seattle, WA 98121
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-start gap-4 mb-4">
+                <Phone className="mt-1" />
+                <div>
+                  <p className="section-label">phone</p>
+                  <p className="text-lg">(206) 919-7490</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-start gap-4 mb-4">
+                <Mail className="mt-1" />
+                <div>
+                  <p className="section-label">email</p>
+                  <p className="text-lg">info@peakfitness.com</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-start gap-4 mb-4">
+                <Clock className="mt-1" />
+                <div>
+                  <p className="section-label">hours</p>
+                  <div className="text-lg space-y-1">
+                    <p>Mon/Wed/Fri: 6AM - 7PM</p>
+                    <p>Tue/Thu: 6AM - 8PM</p>
+                    <p>Saturday: 8AM - 11AM</p>
+                    <p>Sunday: 9AM - 10AM</p>
                   </div>
                 </div>
               </div>
-
-              <div>
-                <div className="flex items-start gap-4 mb-4">
-                  <Phone className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-xs uppercase tracking-wide text-gray-medium mb-2">
-                      Phone
-                    </h3>
-                    <Link
-                      href="tel:206-919-7490"
-                      className="text-base hover:text-accent transition-colors"
-                    >
-                      (206) 919-7490
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div className="flex items-start gap-4 mb-4">
-                  <Mail className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-xs uppercase tracking-wide text-gray-medium mb-2">
-                      Email
-                    </h3>
-                    <Link
-                      href="mailto:info@studio.com"
-                      className="text-base hover:text-accent transition-colors"
-                    >
-                      info@studio.com
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div className="flex items-start gap-4 mb-4">
-                  <Clock className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-xs uppercase tracking-wide text-gray-medium mb-2">
-                      Hours
-                    </h3>
-                    <div className="text-base leading-relaxed space-y-1">
-                      <p>Mon/Wed/Fri: 6AM - 7PM</p>
-                      <p>Tue/Thu: 6AM - 8PM</p>
-                      <p>Saturday: 8AM - 11AM</p>
-                      <p>Sunday: 9AM - 10AM</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Photo Gallery */}
-      <section className="py-16 lg:py-24 bg-cream">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-          >
-            {galleryImages.map((img, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInUp}
-                className="relative aspect-video overflow-hidden group"
-              >
+      {/* GALLERY */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {images.training.slice(0, 4).map((img, i) => (
+              <div key={i} className="relative h-64 overflow-hidden">
                 <Image
                   src={img}
-                  alt={`Gym interior ${i + 1}`}
+                  alt={`Gallery ${i + 1}`}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover hover:scale-105 transition-transform duration-300"
                 />
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }
-
