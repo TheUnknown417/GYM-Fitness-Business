@@ -34,10 +34,10 @@ export default function HomePage() {
           src={images.hero.main}
           alt="Gym training"
           fill
-          className="object-cover brightness-[0.8]"
+          className="object-cover brightness-[0.75]"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-demco-purple/20 to-demco-purple/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-demco-purple/10 to-demco-purple/50 pointer-events-none" />
 
         <div className="relative z-10 text-center text-demco-offwhite px-4 container-demco">
           <motion.p
@@ -65,7 +65,7 @@ export default function HomePage() {
           >
             <Link
               href="/memberships"
-              className="btn-pill btn-primary text-xl px-16 py-7"
+              className="btn-pill bg-white text-demco-purple border-white hover:bg-transparent hover:text-white text-xl px-16 py-7"
             >
               START YOUR JOURNEY
             </Link>
@@ -116,7 +116,7 @@ export default function HomePage() {
                 src={images.training[3]}
                 alt="Personal training session"
                 fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
               />
             </div>
             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-demco-olive/5 -z-10 group-hover:-translate-x-4 group-hover:translate-y-4 transition-transform duration-700" />
@@ -132,7 +132,7 @@ export default function HomePage() {
             <motion.p variants={itemVariants} className="section-label">EXPERT COACHING</motion.p>
             <motion.h2 variants={itemVariants} className="text-4xl md:text-8xl font-heading leading-[0.8] tracking-tighter">TRAINING &<br />GROUP FITNESS</motion.h2>
             <motion.p variants={itemVariants} className="font-testimonial text-xl text-demco-purple/80 leading-relaxed">
-              <span className="font-black">PEAK</span><span className="font-medium">FITNESS</span> IS FILLED WITH LAUGHTER, LOVE, STRENGTH, AND FUN. OUR COMMUNITY IS WHAT MAKES US SPECIAL.
+              <span className="font-black">PEAK</span><span className="font-light">FITNESS</span> IS FILLED WITH LAUGHTER, LOVE, STRENGTH, AND FUN. OUR COMMUNITY IS WHAT MAKES US SPECIAL.
             </motion.p>
             <motion.div variants={itemVariants} className="pt-6">
               <Link href="/memberships" className="btn-pill btn-secondary py-6 px-12 text-lg">
@@ -158,9 +158,9 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-16 lg:gap-24">
             {[
-              { name: 'SARAH JOHNSON', role: 'HEAD COACH', img: images.coaches[0] },
-              { name: 'MIKE CHEN', role: 'STRENGTH COACH', img: images.coaches[1] },
-              { name: 'ALEX RIVERA', role: 'MOBILITY COACH', img: images.coaches[2] },
+              { name: 'SARAH JOHNSON', role: 'HEAD COACH', img: images.coaches[0], pos: 'center' },
+              { name: 'MIKE CHEN', role: 'STRENGTH COACH', img: images.coaches[1], pos: 'top' },
+              { name: 'ALEX RIVERA', role: 'MOBILITY COACH', img: images.coaches[2], pos: 'center' },
             ].map((coach, i) => (
               <motion.div
                 key={i}
@@ -175,7 +175,8 @@ export default function HomePage() {
                     src={coach.img}
                     alt={coach.name}
                     fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    style={{ objectPosition: coach.pos }}
                   />
                 </div>
                 <div className="space-y-4">

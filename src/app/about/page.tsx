@@ -28,15 +28,15 @@ export default function AboutPage() {
   return (
     <main className="bg-demco-cream min-h-screen">
       {/* HERO SECTION */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[65vh] flex items-center justify-center overflow-hidden">
         <Image
           src={images.hero.about}
           alt="About Peak Fitness"
           fill
-          className="object-cover brightness-75"
+          className="object-cover brightness-[0.7]"
           priority
         />
-        <div className="absolute inset-0 bg-demco-purple/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
 
         <div className="relative z-10 text-center text-demco-offwhite px-4">
           <motion.h1
@@ -65,7 +65,7 @@ export default function AboutPage() {
             </motion.h2>
             <motion.div variants={itemVariants} className="space-y-8">
               <p className="font-testimonial text-lg md:text-xl leading-relaxed text-demco-purple text-justify opacity-90">
-                AT PEAK, YOU ARE SURROUNDED BY A TEAM OF PASSIONATE AND KNOWLEDGEABLE COACHES WHO ARE DEDICATED TO HELPING YOU BECOME A BETTER VERSION OF YOURSELF. THE <span className="font-black">PEAK</span><span className="font-medium">FITNESS</span> GYM AND COMMUNITY WILL MOTIVATE, INSPIRE, ENCOURAGE, AND PUSH YOU TO REACH AND EXCEED YOUR GOALS. WE HELP YOU PERFORM BETTER, LOOK GOOD, AND FEEL AMAZING.
+                AT PEAK, YOU ARE SURROUNDED BY A TEAM OF PASSIONATE AND KNOWLEDGEABLE COACHES WHO ARE DEDICATED TO HELPING YOU BECOME A BETTER VERSION OF YOURSELF. THE <span className="font-black">PEAK</span><span className="font-light">FITNESS</span> GYM AND COMMUNITY WILL MOTIVATE, INSPIRE, ENCOURAGE, AND PUSH YOU TO REACH AND EXCEED YOUR GOALS. WE HELP YOU PERFORM BETTER, LOOK GOOD, AND FEEL AMAZING.
               </p>
               <p className="font-testimonial text-lg md:text-xl leading-relaxed text-demco-purple text-justify opacity-90">
                 WE FOCUS ON MOVEMENT, MOBILITY, AGILITY, AND STRENGTH TRAINING IN THE MOST EFFICIENT, SAFE, AND FUN WAY POSSIBLE. FOR US, IT IS NOT JUST A WORKOUT, IT IS ABOUT YOU CHANGING YOUR LIFESTYLE, ENJOYING MOVEMENT, AND GETTING STRONGER AND HEALTHIER.
@@ -127,7 +127,7 @@ export default function AboutPage() {
             <motion.div variants={itemVariants} className="space-y-12">
               <h2 className="text-7xl md:text-9xl font-heading text-demco-purple leading-none tracking-tighter hover:text-demco-olive transition-colors">OUR MISSION</h2>
               <p className="font-testimonial text-lg md:text-xl leading-relaxed text-demco-purple text-justify opacity-80">
-                <span className="font-black">PEAK</span><span className="font-medium">FITNESS</span> IS AN ENVIRONMENT THAT IS FILLED WITH LAUGHTER, LOVE, STRENGTH AND FUN. IT IS IMPORTANT TO HAVE A SPACE AND COMMUNITY THAT EMBODIES DEDICATION, HARD WORK AND SUPPORT AND <span className="font-black">PEAK</span><span className="font-medium">FITNESS</span> IS JUST THAT. OUR COMMUNITY IS WHAT MAKES THE GYM SO SPECIAL. YOU WON'T FIND ANOTHER PLACE WHERE YOU DEVELOP STRENGTH, MAINTAIN AND GAIN HEALTH, BUT ALSO HAVE A COMMUNITY OF INDIVIDUALS THAT TRULY BECOME YOUR FRIENDS.
+                <span className="font-black">PEAK</span><span className="font-light">FITNESS</span> IS AN ENVIRONMENT THAT IS FILLED WITH LAUGHTER, LOVE, STRENGTH AND FUN. IT IS IMPORTANT TO HAVE A SPACE AND COMMUNITY THAT EMBODIES DEDICATION, HARD WORK AND SUPPORT AND <span className="font-black">PEAK</span><span className="font-light">FITNESS</span> IS JUST THAT. OUR COMMUNITY IS WHAT MAKES THE GYM SO SPECIAL. YOU WON'T FIND ANOTHER PLACE WHERE YOU DEVELOP STRENGTH, MAINTAIN AND GAIN HEALTH, BUT ALSO HAVE A COMMUNITY OF INDIVIDUALS THAT TRULY BECOME YOUR FRIENDS.
               </p>
             </motion.div>
           </motion.div>
@@ -150,9 +150,9 @@ export default function AboutPage() {
         <div className="container-demco">
           <div className="grid md:grid-cols-3 gap-16 lg:gap-24">
             {[
-              { name: 'SARAH JOHNSON', role: 'OWNER + HEAD COACH', img: images.coaches[0] },
-              { name: 'MIKE CHEN', role: 'STRENGTH COACH', img: images.coaches[1] },
-              { name: 'ALEX RIVERA', role: 'MOBILITY SPECIALIST', img: images.coaches[2] },
+              { name: 'SARAH JOHNSON', role: 'OWNER + HEAD COACH', img: images.coaches[0], pos: 'center' },
+              { name: 'MIKE CHEN', role: 'STRENGTH COACH', img: images.coaches[1], pos: 'top' },
+              { name: 'ALEX RIVERA', role: 'MOBILITY SPECIALIST', img: images.coaches[2], pos: 'center' },
             ].map((coach, i) => (
               <motion.div
                 key={i}
@@ -167,7 +167,8 @@ export default function AboutPage() {
                     src={coach.img}
                     alt={coach.name}
                     fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    style={{ objectPosition: coach.pos }}
                   />
                 </div>
                 <div className="space-y-4">
