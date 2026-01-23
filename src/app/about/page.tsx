@@ -43,7 +43,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl md:text-[12rem] font-heading leading-[0.8] tracking-tighter"
+            className="text-6xl md:text-[10rem] lg:text-[12rem] font-heading leading-[0.8] tracking-tighter"
           >
             ABOUT<br />PEAK.
           </motion.h1>
@@ -151,7 +151,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-16 lg:gap-24">
             {[
               { name: 'SARAH JOHNSON', role: 'OWNER + HEAD COACH', img: images.coaches[0] },
-              { name: 'MIKE CHEN', role: 'STRENGTH COACH', img: images.coaches[1] },
+              { name: 'MIKE CHENG', role: 'STRENGTH COACH', img: images.coaches[1] },
               { name: 'ALEX RIVERA', role: 'MOBILITY SPECIALIST', img: images.coaches[2] },
             ].map((coach, i) => (
               <motion.div
@@ -188,9 +188,12 @@ export default function AboutPage() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center space-y-8">
-          <h2 className="text-6xl md:text-[14rem] text-white font-heading tracking-tighter leading-none">PEAKFITNESS.</h2>
-          <div className="h-2 bg-white w-64" />
+        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center space-y-8 px-4 text-center">
+          <h2 className="text-6xl md:text-[12rem] lg:text-[14rem] text-white font-heading tracking-tighter leading-none">
+            <span className="font-black">PEAK</span>
+            <span className="font-bold">FITNESS</span>.
+          </h2>
+          <div className="h-2 bg-white w-64 mx-auto" />
         </div>
       </section>
     </main>

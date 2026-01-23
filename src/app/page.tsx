@@ -132,7 +132,7 @@ export default function HomePage() {
             <motion.p variants={itemVariants} className="section-label">EXPERT COACHING</motion.p>
             <motion.h2 variants={itemVariants} className="text-4xl md:text-8xl font-heading leading-[0.8] tracking-tighter">TRAINING &<br />GROUP FITNESS</motion.h2>
             <motion.p variants={itemVariants} className="font-testimonial text-xl text-demco-purple/80 leading-relaxed">
-              PEAKFITNESS IS FILLED WITH LAUGHTER, LOVE, STRENGTH, AND FUN. OUR COMMUNITY IS WHAT MAKES US SPECIAL.
+              <span className="font-black">PEAK</span><span className="font-bold">FITNESS</span> IS FILLED WITH LAUGHTER, LOVE, STRENGTH, AND FUN. OUR COMMUNITY IS WHAT MAKES US SPECIAL.
             </motion.p>
             <motion.div variants={itemVariants} className="pt-6">
               <Link href="/memberships" className="btn-pill btn-secondary py-6 px-12 text-lg">

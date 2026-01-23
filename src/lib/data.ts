@@ -16,10 +16,13 @@ import img_gal_4 from './sushil-ghimire-5UbIqV58CW8-unsplash.jpg';
 import img_gal_5 from './taylor-blackler-Oxmq8jyVjjE-unsplash.jpg';
 import img_gal_6 from './vitaly-gariev-8a4vflYr7gs-unsplash.jpg';
 
-// Note: Testimonial people shots are less common in generic gym packs, 
-// using training closeups for testimonials to maintain high quality and uniqueness.
-import img_test_1 from './meghan-holmes-wy_L8W0zcpI-unsplash.jpg';
-import img_test_2 from './aaron-brogden-9y4MaTz2Js0-unsplash.jpg';
+// NEW IMAGES (V7)
+import img_new_portrait_1 from './attractive-athletic-girl-stands-wall-simulators-gym-healthy-lifestyle.jpg';
+import img_new_portrait_2 from './portrait-fit-young-woman-exercising-with-dumbbells-gym.jpg';
+import img_new_portrait_3 from './portrait-young-woman-holding-dumbbell-gym.jpg';
+import img_new_gym_1 from './pexels-ivan-s-4164758.jpg';
+import img_new_gym_2 from './pexels-ketut-subiyanto-4853698.jpg';
+import img_new_gym_3 from './pexels-olly-3768913.jpg';
 
 export const images = {
   // HERO IMAGES (Local)
@@ -30,46 +33,46 @@ export const images = {
     testimonials: img_hero_testimonials,
   },
 
-  // COACHES (Using specific local portraits from the pack)
+  // COACHES (Using high-quality portraits)
   coaches: [
-    img_gal_1, // Sarah
-    img_gal_3, // Mike
-    img_gal_5, // Alex
-    img_gal_2, // Extra
-    img_gal_4, // Extra
-    img_gal_6, // Extra
+    img_new_portrait_1, // Sarah
+    img_new_portrait_2, // Mike
+    img_new_portrait_3, // Alex
+    img_gal_2,          // Extra
+    img_gal_4,          // Extra
+    img_gal_6,          // Extra
   ],
 
-  // TRAINING PHOTOS (Local)
+  // TRAINING PHOTOS (Local - Unique indices)
   training: [
-    img_about_intro,    // [0]
-    img_about_vertical, // [1]
-    img_about_footer,   // [2]
-    img_home_training,  // [3]
-    img_gal_1,          // [4]
-    img_gal_2,          // [5]
-    img_gal_3,          // [6]
-    img_gal_4,          // [7]
-    img_gal_5,          // [8]
-    img_gal_6,          // [9]
-    img_hero_main,      // [10]
-    img_hero_about,     // [11]
-    img_hero_memberships, // [12]
-    img_hero_testimonials, // [13]
-    img_about_intro,    // [14]
-    img_about_vertical, // [15]
-    img_about_footer,   // [16]
-    img_home_training,  // [17]
+    img_about_intro,      // [0]
+    img_about_vertical,   // [1]
+    img_about_footer,     // [2]
+    img_home_training,    // [3]
+    img_new_gym_1,        // [4]
+    img_new_gym_2,        // [5]
+    img_new_gym_3,        // [6]
+    img_gal_1,            // [7]
+    img_gal_2,            // [8]
+    img_gal_3,            // [9]
+    img_gal_4,            // [10]
+    img_gal_5,            // [11]
+    img_gal_6,            // [12]
+    img_hero_main,        // [13]
+    img_hero_about,       // [14]
+    img_hero_memberships, // [15]
+    img_hero_testimonials, // [16]
+    img_new_gym_1,        // [17]
   ],
 
-  // TESTIMONIALS (Local)
+  // TESTIMONIALS (Using unique new portrait and gym shots)
   testimonials: [
-    img_test_1,
-    img_test_2,
-    img_gal_3,
-    img_gal_4,
-    img_gal_5,
-    img_gal_6,
+    img_new_portrait_1,
+    img_new_portrait_2,
+    img_new_portrait_3,
+    img_new_gym_1,
+    img_new_gym_2,
+    img_new_gym_3,
   ],
 
   // MEMBERSHIP TYPES (Local)

@@ -72,10 +72,11 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* GIANT BRAND REVEAL TEXT - Responsive Fix */}
-      <div className="relative w-full overflow-hidden pointer-events-none select-none -mt-8 sm:-mt-16 lg:-mt-32">
-        <h2 className="text-[14vw] sm:text-[16vw] lg:text-[18vw] font-heading font-black text-demco-cream opacity-[0.08] leading-none text-center tracking-tighter whitespace-nowrap px-4">
-          PEAKFITNESS
+      {/* GIANT BRAND REVEAL TEXT - Responsive Fix V2 */}
+      <div className="relative w-full overflow-hidden pointer-events-none select-none -mt-4 sm:-mt-8 lg:-mt-16">
+        <h2 className="text-[12vw] sm:text-[14vw] lg:text-[15vw] font-heading font-black text-demco-cream opacity-[0.06] leading-none text-center tracking-tighter whitespace-nowrap px-8">
+          <span className="font-black">PEAK</span>
+          <span className="font-bold">FITNESS</span>
         </h2>
       </div>
     </footer>
