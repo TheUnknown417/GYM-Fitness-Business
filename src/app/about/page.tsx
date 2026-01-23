@@ -43,31 +43,49 @@ export default function AboutPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl md:text-[12rem] font-heading leading-[0.8]"
+            className="text-6xl md:text-[12rem] font-heading leading-[0.8] tracking-tighter"
           >
             ABOUT<br />PEAK.
           </motion.h1>
         </div>
       </section>
 
-      {/* WE ARE PEAK (Introduction Section) */}
+      {/* WHY WE MOVE (Detailed structure matched to source code) */}
       <section className="section-padding bg-demco-cream">
-        <div className="container-demco">
+        <div className="container-demco grid lg:grid-cols-2 gap-24 items-start">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={containerVariants}
-            className="max-w-5xl space-y-12"
+            className="space-y-12"
           >
-            <motion.p variants={itemVariants} className="section-label">WE ARE PEAK FITNESS</motion.p>
-            <motion.h2 variants={itemVariants} className="text-5xl md:text-9xl font-heading text-demco-purple leading-[0.9]">
-              ELEVATING YOUR<br />MOOD.
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-heading text-demco-purple leading-none hover:text-demco-olive transition-colors">
+              WHY WE MOVE.
             </motion.h2>
-            <motion.div variants={itemVariants} className="h-2 bg-demco-purple w-32" />
-            <motion.p variants={itemVariants} className="font-testimonial text-xl md:text-3xl leading-relaxed text-demco-purple max-w-4xl text-justify">
-              PEAK FITNESS WAS FOUNDED ON THE BELIEF THAT EVERYONE DESERVES A MOVEMENT PRACTICE THAT IS BOTH CHALLENGING AND SUSTAINABLE. WE DON'T JUST TEACH EXERCISES; WE CULTIVATE A COMMUNITY OF INDIVIDUALS DEDICATED TO LONG-TERM HEALTH AND VITALITY.
-            </motion.p>
+            <motion.div variants={itemVariants} className="space-y-8">
+              <p className="font-testimonial text-lg md:text-xl leading-relaxed text-demco-purple text-justify opacity-90">
+                AT PEAK, YOU ARE SURROUNDED BY A TEAM OF PASSIONATE AND KNOWLEDGEABLE COACHES WHO ARE DEDICATED TO HELPING YOU BECOME A BETTER VERSION OF YOURSELF. THE PEAKFITNESS GYM AND COMMUNITY WILL MOTIVATE, INSPIRE, ENCOURAGE, AND PUSH YOU TO REACH AND EXCEED YOUR GOALS. WE HELP YOU PERFORM BETTER, LOOK GOOD, AND FEEL AMAZING.
+              </p>
+              <p className="font-testimonial text-lg md:text-xl leading-relaxed text-demco-purple text-justify opacity-90">
+                WE FOCUS ON MOVEMENT, MOBILITY, AGILITY, AND STRENGTH TRAINING IN THE MOST EFFICIENT, SAFE, AND FUN WAY POSSIBLE. FOR US, IT IS NOT JUST A WORKOUT, IT IS ABOUT YOU CHANGING YOUR LIFESTYLE, ENJOYING MOVEMENT, AND GETTING STRONGER AND HEALTHIER.
+              </p>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2 }}
+            className="relative h-[650px] w-full img-animate overflow-hidden shadow-xl"
+          >
+            <Image
+              src={images.training[0]}
+              alt="Training Group"
+              fill
+              className="object-cover"
+            />
           </motion.div>
         </div>
       </section>
@@ -84,7 +102,7 @@ export default function AboutPage() {
             className="relative h-[1100px] w-full img-animate overflow-hidden order-2 lg:order-1 shadow-2xl"
           >
             <Image
-              src={images.training[3]}
+              src={images.training[1]}
               alt="Our Facility Vertical"
               fill
               className="object-cover"
@@ -100,38 +118,36 @@ export default function AboutPage() {
             className="space-y-48 order-1 lg:order-2"
           >
             <motion.div variants={itemVariants} className="space-y-12">
-              <h2 className="text-7xl md:text-9xl font-heading text-demco-purple leading-none tracking-tighter">OUR GOALS</h2>
+              <h2 className="text-7xl md:text-9xl font-heading text-demco-purple leading-none tracking-tighter hover:text-demco-olive transition-colors">OUR GOALS</h2>
               <p className="font-testimonial text-lg md:text-xl leading-relaxed text-demco-purple text-justify opacity-80">
                 OUR TEAM WORKS WITH YOU AND CREATES A CUSTOMIZED WORKOUT PLAN THAT FITS YOUR BODY AND NEEDS, TRACKING AND SAVING EVERY WORKOUT. WE ARE DEDICATED TO CONTINUOUSLY HELPING YOU CREATE AND ACHIEVE NEW GOALS UTILIZING WEEKLY CHECK-INS. WE DISCUSS GOAL SETTING, NUTRITION HABITS AND YOUR OVERALL WELL-BEING AND MENTAL HEALTH. WE BELIEVE YOUR HEALTH IS MUCH MORE THAN YOUR WORKOUT; IT IS HOW YOU FUEL YOUR BODY, MANAGE YOUR STRESS AND CREATE DAILY ROUTINES.
               </p>
             </motion.div>
 
             <motion.div variants={itemVariants} className="space-y-12">
-              <h2 className="text-7xl md:text-9xl font-heading text-demco-purple leading-none tracking-tighter">OUR MISSION</h2>
+              <h2 className="text-7xl md:text-9xl font-heading text-demco-purple leading-none tracking-tighter hover:text-demco-olive transition-colors">OUR MISSION</h2>
               <p className="font-testimonial text-lg md:text-xl leading-relaxed text-demco-purple text-justify opacity-80">
-                PEAK FITNESS IS AN ENVIRONMENT THAT IS FILLED WITH LAUGHTER, LOVE, STRENGTH AND FUN. IT IS IMPORTANT TO HAVE A SPACE AND COMMUNITY THAT EMBODIES DEDICATION, HARD WORK AND SUPPORT AND PEAK FITNESS IS JUST THAT. OUR COMMUNITY IS WHAT MAKES THE GYM SO SPECIAL. YOU WON'T FIND ANOTHER PLACE WHERE YOU DEVELOP STRENGTH, MAINTAIN AND GAIN HEALTH, BUT ALSO HAVE A COMMUNITY OF INDIVIDUALS THAT TRULY BECOME YOUR FRIENDS.
+                PEAKFITNESS IS AN ENVIRONMENT THAT IS FILLED WITH LAUGHTER, LOVE, STRENGTH AND FUN. IT IS IMPORTANT TO HAVE A SPACE AND COMMUNITY THAT EMBODIES DEDICATION, HARD WORK AND SUPPORT AND PEAKFITNESS IS JUST THAT. OUR COMMUNITY IS WHAT MAKES THE GYM SO SPECIAL. YOU WON'T FIND ANOTHER PLACE WHERE YOU DEVELOP STRENGTH, MAINTAIN AND GAIN HEALTH, BUT ALSO HAVE A COMMUNITY OF INDIVIDUALS THAT TRULY BECOME YOUR FRIENDS.
               </p>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* COACHES SECTION */}
-      <section className="section-padding bg-demco-cream relative overflow-hidden">
-        {/* Background Decorative Text */}
-        <div className="absolute top-1/2 left-0 w-full opacity-[0.03] pointer-events-none select-none -translate-y-1/2 overflow-hidden whitespace-nowrap">
-          <h2 className="text-[30rem] font-heading font-black">PEAK PEAK PEAK PEAK</h2>
+      {/* MEET OUR COACHES */}
+      <section className="section-padding bg-demco-cream">
+        <div className="container-demco text-center mb-32">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-[12vw] font-heading leading-none tracking-tighter"
+          >
+            MEET OUR COACHES.
+          </motion.h1>
         </div>
 
-        <div className="container-demco relative z-10">
-          <div className="mb-32 flex flex-col lg:flex-row justify-between items-end gap-12">
-            <div className="max-w-4xl">
-              <p className="section-label">THE TEAM</p>
-              <h2 className="text-6xl md:text-[10rem] font-heading leading-[0.8] tracking-tighter">MEET OUR<br />COACHES.</h2>
-            </div>
-            <div className="h-2 bg-demco-purple w-64 hidden lg:block mb-8" />
-          </div>
-
+        <div className="container-demco">
           <div className="grid md:grid-cols-3 gap-16 lg:gap-24">
             {[
               { name: 'SARAH JOHNSON', role: 'OWNER + HEAD COACH', img: images.coaches[0] },
@@ -146,7 +162,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className="relative aspect-[3/4] mb-12 overflow-hidden img-animate grayscale group-hover:grayscale-0 transition-all duration-1000 shadow-xl">
+                <div className="relative aspect-[4/5] mb-12 overflow-hidden img-animate grayscale group-hover:grayscale-0 transition-all duration-1000 shadow-xl">
                   <Image
                     src={coach.img}
                     alt={coach.name}
@@ -164,14 +180,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="section-padding bg-black text-demco-cream text-center relative overflow-hidden">
-        <div className="container-demco max-w-6xl space-y-16 relative z-10">
-          <p className="section-label !text-demco-cream opacity-60">READY TO JOIN THE COMMUNITY?</p>
-          <h2 className="text-6xl md:text-[12rem] font-heading leading-[0.8] tracking-widest mb-16">MOVE<br />BETTER.</h2>
-          <a href="/contact" className="btn-pill bg-white text-black hover:bg-demco-olive hover:text-white border-none text-2xl px-24 py-10 tracking-widest transition-all">
-            GET STARTED
-          </a>
+      {/* FOOTER PUSH SECTION */}
+      <section className="h-[70vh] relative overflow-hidden">
+        <Image
+          src={images.training[2]}
+          alt="Gym Detail"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center space-y-8">
+          <h2 className="text-6xl md:text-[14rem] text-white font-heading tracking-tighter leading-none">PEAKFITNESS.</h2>
+          <div className="h-2 bg-white w-64" />
         </div>
       </section>
     </main>
