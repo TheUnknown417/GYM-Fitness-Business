@@ -23,6 +23,7 @@ const config: Config = {
         body: ["var(--font-body)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
         testimonial: ["var(--font-testimonial)", "monospace"],
+        nav: ["var(--font-nav)", "sans-serif"],
       },
       letterSpacing: {
         "demco-tight": "-0.02em",

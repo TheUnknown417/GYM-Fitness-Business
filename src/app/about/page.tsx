@@ -27,16 +27,16 @@ export default function AboutPage() {
 
   return (
     <main className="bg-demco-cream min-h-screen">
-      {/* HERO SECTION */}
+      {/* HERO SECTION - Standardized Treatment */}
       <section className="relative h-[65vh] flex items-center justify-center overflow-hidden">
         <Image
           src={images.hero.about}
           alt="About Peak Fitness"
           fill
-          className="object-cover brightness-[0.7]"
+          className="object-cover brightness-[0.75]"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-demco-purple/10 to-demco-purple/50 pointer-events-none" />
 
         <div className="relative z-10 text-center text-demco-offwhite px-4 mt-20 md:mt-24">
           <motion.p
@@ -85,13 +85,13 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
-            className="relative h-[650px] w-full img-animate overflow-hidden shadow-xl"
+            className="relative h-[650px] w-full img-animate overflow-hidden shadow-xl group"
           >
             <Image
               src={images.training[0]}
               alt="Training Group"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-110"
             />
           </motion.div>
         </div>
@@ -106,13 +106,13 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative h-[1100px] w-full img-animate overflow-hidden order-2 lg:order-1 shadow-2xl"
+            className="relative h-[1100px] w-full img-animate overflow-hidden order-2 lg:order-1 shadow-2xl group"
           >
             <Image
               src={images.training[1]}
               alt="Our Facility Vertical"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-110"
             />
           </motion.div>
 
@@ -174,7 +174,7 @@ export default function AboutPage() {
                     src={coach.img}
                     alt={coach.name}
                     fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    className="object-cover transition-transform duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-110"
                     style={{ objectPosition: coach.pos }}
                   />
                 </div>

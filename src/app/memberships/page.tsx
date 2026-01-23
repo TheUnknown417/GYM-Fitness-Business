@@ -32,15 +32,15 @@ export default function MembershipsPage() {
 
   return (
     <main className="bg-demco-cream">
-      {/* HERO */}
+      {/* HERO SECTION - Standardized Treatment */}
       <section className="relative h-[65vh] flex items-center justify-center overflow-hidden">
         <Image
           src={images.hero.memberships}
           alt="Memberships"
           fill
-          className="object-cover brightness-[0.7]"
+          className="object-cover brightness-[0.75]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-demco-purple/10 to-demco-purple/50 pointer-events-none" />
 
         <div className="relative z-10 text-center text-demco-offwhite px-4 container-demco mt-20 md:mt-24">
           <motion.p
@@ -73,12 +73,12 @@ export default function MembershipsPage() {
               className={`grid lg:grid-cols-12 gap-16 items-center`}
             >
               <div className={`lg:col-span-7 relative group ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <div className="aspect-[16/10] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 shadow-xl">
+                <div className="aspect-[16/10] overflow-hidden grayscale-0 hover:grayscale transition-all duration-1000 shadow-xl">
                   <Image
                     src={tier.image}
                     alt={tier.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover transition-transform duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-110"
                   />
                 </div>
                 <div className={`absolute -bottom-6 -right-6 w-32 h-32 bg-demco-olive/10 -z-10`} />
@@ -110,7 +110,7 @@ export default function MembershipsPage() {
                 <div className="pt-8">
                   <Link
                     href="/contact"
-                    className="btn-pill btn-primary w-full sm:w-auto"
+                    className="btn-pill btn-primary w-full sm:w-auto font-nav font-bold tracking-widest"
                   >
                     Get Started
                   </Link>

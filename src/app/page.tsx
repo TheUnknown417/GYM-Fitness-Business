@@ -28,7 +28,7 @@ export default function HomePage() {
 
   return (
     <main className="bg-demco-cream">
-      {/* HERO SECTION */}
+      {/* HERO SECTION - Standardized Treatment */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <Image
           src={images.hero.main}
@@ -65,13 +65,13 @@ export default function HomePage() {
           >
             <Link
               href="/memberships"
-              className="rounded-full bg-white text-demco-purple border-none py-5 px-14 text-[10px] md:text-xs font-testimonial tracking-[0.3em] hover:bg-white/90 transition-all uppercase"
+              className="rounded-full bg-white text-demco-purple border-none py-5 px-14 text-[10px] md:text-xs font-nav font-bold tracking-[0.3em] hover:bg-white/90 transition-all uppercase"
             >
               START YOUR JOURNEY
             </Link>
             <Link
               href="/contact"
-              className="font-testimonial text-[10px] md:text-xs uppercase tracking-[0.3em] hover:text-white transition-all underline underline-offset-8"
+              className="font-nav text-[10px] md:text-xs uppercase tracking-[0.3em] hover:text-white transition-all underline underline-offset-8 font-bold"
             >
               FIRST CLASS FREE
             </Link>
@@ -111,12 +111,12 @@ export default function HomePage() {
             transition={{ duration: 1 }}
             className="order-2 lg:order-1 relative group"
           >
-            <div className="aspect-[4/5] relative overflow-hidden img-animate grayscale">
+            <div className="aspect-[4/5] relative overflow-hidden img-animate grayscale-0 hover:grayscale transition-all duration-1000">
               <Image
                 src={images.training[3]}
                 alt="Personal training session"
                 fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                className="object-cover transition-transform duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-110"
               />
             </div>
             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-demco-olive/5 -z-10 group-hover:-translate-x-4 group-hover:translate-y-4 transition-transform duration-700" />
@@ -143,7 +143,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* COACHES SECTION */}
+      {/* COACHES SECTION - Dynamic Interactions */}
       <section className="section-padding bg-demco-cream">
         <div className="container-demco">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
@@ -151,7 +151,7 @@ export default function HomePage() {
               <p className="section-label">THE TEAM</p>
               <h2 className="text-5xl md:text-[8rem] font-heading leading-[0.8] tracking-tighter">MEET OUR<br />COACHES.</h2>
             </div>
-            <Link href="/about" className="font-testimonial text-sm uppercase tracking-widest border-b border-demco-purple pb-2 hover:text-demco-olive hover:border-demco-olive transition-all">
+            <Link href="/about" className="font-nav text-[10px] uppercase tracking-widest border-b border-demco-purple pb-2 hover:text-demco-olive hover:border-demco-olive transition-all font-bold">
               ALL TRAINERS
             </Link>
           </div>
@@ -170,12 +170,12 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className="relative aspect-[3/4] mb-8 overflow-hidden img-animate grayscale group-hover:grayscale-0 transition-all duration-700 shadow-xl">
+                <div className="relative aspect-[3/4] mb-8 overflow-hidden img-animate grayscale group-hover:grayscale-0 transition-all duration-1000 shadow-xl">
                   <Image
                     src={coach.img}
                     alt={coach.name}
                     fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    className="object-cover transition-transform duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-110"
                     style={{ objectPosition: coach.pos }}
                   />
                 </div>
@@ -205,7 +205,7 @@ export default function HomePage() {
                 src={images.training[idx]}
                 alt={`Training Gallery ${idx}`}
                 fill
-                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 opacity-60 group-hover:opacity-100"
+                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 opacity-60 group-hover:opacity-100 ease-[0.16,1,0.3,1]"
               />
             </motion.div>
           ))}

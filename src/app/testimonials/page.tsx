@@ -79,15 +79,15 @@ export default function TestimonialsPage() {
 
   return (
     <main className="bg-demco-cream min-h-screen">
-      {/* HERO */}
+      {/* HERO SECTION - Standardized Treatment */}
       <section className="relative h-[65vh] flex items-center justify-center overflow-hidden">
         <Image
           src={images.hero.testimonials}
           alt="Testimonials"
           fill
-          className="object-cover brightness-[0.7]"
+          className="object-cover brightness-[0.75]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-demco-purple/10 to-demco-purple/50 pointer-events-none" />
 
         <div className="relative z-10 text-center text-demco-offwhite px-4 container-demco mt-20 md:mt-24">
           <motion.p
@@ -110,14 +110,14 @@ export default function TestimonialsPage() {
             transition={{ delay: 0.5 }}
             className="mt-10"
           >
-            <Link href="#reviews" className="rounded-full bg-white text-demco-purple border-none py-4 px-12 text-[10px] md:text-xs font-testimonial tracking-[0.3em] hover:bg-white/90 transition-all uppercase">
+            <Link href="#reviews" className="rounded-full bg-white text-demco-purple border-none py-4 px-12 text-[10px] md:text-xs font-nav font-bold tracking-[0.3em] hover:bg-white/90 transition-all uppercase">
               MORE REVIEWS
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* MASONRY TESTIMONIALS */}
+      {/* MASONRY TESTIMONIALS - Enhanced Zoom Interactions */}
       <section className="section-padding" id="reviews">
         <div className="container-demco">
           <motion.div
@@ -135,14 +135,14 @@ export default function TestimonialsPage() {
                 <motion.div
                   key={review.id}
                   variants={itemVariants}
-                  className="bg-demco-offwhite p-10 space-y-8 flex flex-col"
+                  className="bg-demco-offwhite p-10 space-y-8 flex flex-col group cursor-pointer"
                 >
-                  <div className="relative aspect-square overflow-hidden img-animate grayscale">
+                  <div className="relative aspect-square overflow-hidden img-animate grayscale group-hover:grayscale-0 transition-all duration-1000 shadow-xl">
                     <Image
                       src={review.image}
                       alt={review.name}
                       fill
-                      className="object-cover scale-105"
+                      className="object-cover transition-transform duration-1000 ease-[0.16,1,0.3,1] group-hover:scale-110"
                     />
                   </div>
                   <div className="space-y-4">
@@ -178,7 +178,7 @@ export default function TestimonialsPage() {
                 className="w-full bg-white px-6 py-5 font-testimonial text-sm focus:outline-none placeholder:text-gray-400 border border-gray-200"
               />
             </div>
-            <button className="rounded-full bg-black text-white hover:bg-demco-purple border-none px-12 py-4 font-heading tracking-widest text-xs uppercase transition-all shadow-md">
+            <button className="rounded-full bg-black text-white hover:bg-demco-purple border-none px-12 py-4 font-nav font-bold tracking-widest text-[10px] uppercase transition-all shadow-md">
               SIGN UP
             </button>
           </div>

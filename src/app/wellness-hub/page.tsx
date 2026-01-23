@@ -8,9 +8,9 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 export default function WellnessHubPage() {
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section - Standardized Treatment */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-demco-purple">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-demco-purple/10 to-demco-purple/50 pointer-events-none" />
 
         <div className="relative z-10 container mx-auto px-4 text-center text-demco-offwhite mt-20 md:mt-24">
           <motion.p
@@ -50,7 +50,7 @@ export default function WellnessHubPage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
           >
             {blogPosts.map((post) => (
-              <motion.div key={post.id} variants={fadeInUp}>
+              <motion.div key={post.id} variants={fadeInUp} className="group cursor-pointer">
                 <BlogCard post={post} />
               </motion.div>
             ))}
