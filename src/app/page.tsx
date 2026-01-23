@@ -79,7 +79,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* MISSION SECTION (Unique image via improved contrast) */}
+      {/* MISSION SECTION */}
       <section className="section-padding bg-demco-cream">
         <div className="container-demco">
           <motion.div
@@ -101,7 +101,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TRAINING GRID (Unique Image index 12) */}
+      {/* TRAINING GRID */}
       <section className="section-padding bg-demco-offwhite">
         <div className="container-demco grid lg:grid-cols-2 gap-24 items-center">
           <motion.div
@@ -113,7 +113,7 @@ export default function HomePage() {
           >
             <div className="aspect-[4/5] relative overflow-hidden img-animate grayscale">
               <Image
-                src={images.training[12]}
+                src={images.training[3]}
                 alt="Personal training session"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -143,7 +143,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* COACHES SECTION (Unique Indices 3, 4, 5) */}
+      {/* COACHES SECTION */}
       <section className="section-padding bg-demco-cream">
         <div className="container-demco">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
@@ -158,9 +158,9 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-16 lg:gap-24">
             {[
-              { name: 'JESSICA LEE', role: 'TRAINER', img: images.coaches[3] },
-              { name: 'DAVID SMITH', role: 'TRAINER', img: images.coaches[4] },
-              { name: 'CHRIS EVANS', role: 'TRAINER', img: images.coaches[5] },
+              { name: 'SARAH JOHNSON', role: 'HEAD COACH', img: images.coaches[0] },
+              { name: 'MIKE CHEN', role: 'STRENGTH COACH', img: images.coaches[1] },
+              { name: 'ALEX RIVERA', role: 'MOBILITY COACH', img: images.coaches[2] },
             ].map((coach, i) => (
               <motion.div
                 key={i}
@@ -188,10 +188,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* GALLERY (Staggered Grid - Unique indices 13 to 17 + 6) */}
+      {/* GALLERY */}
       <section className="bg-black p-1 md:p-2">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1 md:gap-2">
-          {[13, 14, 15, 16, 17, 6].map((idx, i) => (
+          {[6, 7, 8, 9, 10, 11].map((idx, i) => (
             <motion.div
               key={i}
               className="relative aspect-square overflow-hidden group"

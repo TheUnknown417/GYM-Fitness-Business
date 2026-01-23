@@ -72,9 +72,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* GIANT BRAND REVEAL TEXT */}
-      <div className="relative w-full overflow-hidden pointer-events-none select-none -mb-8 lg:-mb-16">
-        <h2 className="text-[18vw] font-heading font-black text-demco-cream opacity-[0.08] leading-none text-center tracking-tighter">
+      {/* GIANT BRAND REVEAL TEXT - Responsive Fix */}
+      <div className="relative w-full overflow-hidden pointer-events-none select-none -mt-8 sm:-mt-16 lg:-mt-32">
+        <h2 className="text-[14vw] sm:text-[16vw] lg:text-[18vw] font-heading font-black text-demco-cream opacity-[0.08] leading-none text-center tracking-tighter whitespace-nowrap px-4">
           PEAKFITNESS
         </h2>
       </div>
