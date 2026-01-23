@@ -3,22 +3,9 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
-
-  // Handle scroll for dynamic background if needed, 
-  // but keeping it transparent as per "on the background" request
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { name: 'About', href: '/about' },
@@ -28,46 +15,49 @@ export default function Header() {
   ];
 
   return (
-    <header className={`absolute top-0 left-0 right-0 z-[100] transition-all duration-500 bg-transparent`}>
-      <div className="container-demco flex items-center justify-between py-10 md:py-12 lg:px-12">
-        {/* LOGO - PEAK (Black) FITNESS (Light/Normal) */}
+    <header className="absolute top-0 left-0 right-0 z-[100] bg-transparent">
+      <div className="max-w-[1800px] mx-auto flex items-center justify-between py-12 px-8 md:px-16 lg:px-24">
+        {/* LOGO - Scaled down for elegance */}
         <Link
           href="/"
-          className="text-5xl md:text-6xl lg:text-7xl font-heading tracking-tighter text-white hover:opacity-80 transition-opacity flex items-baseline"
+          className="text-3xl md:text-4xl lg:text-5xl font-heading tracking-tighter text-white hover:opacity-80 transition-opacity flex items-baseline"
         >
           <span className="font-black">PEAK</span>
           <span className="font-light">FITNESS</span>
         </Link>
 
-        {/* DESKTOP NAV - White/Cream for background visibility */}
-        <nav className="hidden lg:flex items-center gap-10 xl:gap-16">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="font-testimonial text-sm uppercase tracking-widest text-white hover:text-demco-olive transition-colors font-bold"
-            >
-              {link.name}
-            </Link>
-          ))}
+        {/* CLUSTERED NAV - Pushed to the right but before the button */}
+        <div className="hidden lg:flex items-center gap-12 xl:gap-20">
+          <nav className="flex items-center gap-10 xl:gap-14">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="font-testimonial text-xs xl:text-sm uppercase tracking-[0.3em] text-white hover:text-white/70 transition-colors font-bold"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
           <Link
             href="/contact"
-            className="btn-pill bg-white text-demco-purple border-white hover:bg-transparent hover:text-white !py-4 !px-10 text-base lg:text-lg ml-4"
+            className="rounded-full bg-demco-purple/90 text-white border-none py-4 px-10 text-sm xl:text-base font-testimonial tracking-[0.2em] hover:bg-demco-purple transition-colors shadow-lg"
           >
             BOOK NOW
           </Link>
-        </nav>
+        </div>
 
         {/* MOBILE TOGGLE */}
         <button
           className="lg:hidden text-white p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X size={36} /> : <Menu size={36} />}
+          {mobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
       </div>
 
-      {/* MOBILE MENU - Cream background for readability when open */}
+      {/* MOBILE MENU */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-demco-cream h-screen w-full fixed inset-0 z-[110] flex flex-col items-center justify-center space-y-10">
           <button
