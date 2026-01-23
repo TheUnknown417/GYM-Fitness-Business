@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 export default function Header() {
@@ -16,24 +16,25 @@ export default function Header() {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-[100] bg-transparent">
-      <div className="max-w-[1800px] mx-auto flex items-center justify-between py-12 px-8 md:px-16 lg:px-24">
-        {/* LOGO - Scaled down for elegance */}
+      {/* Container with extra-wide breathing room (max-w-[1920px]) */}
+      <div className="max-w-[1920px] mx-auto flex items-center justify-between py-12 px-10 md:px-20 lg:px-28">
+        {/* LOGO - Scaled down to match reference (approx 24-28px) */}
         <Link
           href="/"
-          className="text-3xl md:text-4xl lg:text-5xl font-heading tracking-tighter text-white hover:opacity-80 transition-opacity flex items-baseline"
+          className="text-2xl md:text-3xl font-heading tracking-tight text-white hover:opacity-80 transition-opacity flex items-baseline"
         >
           <span className="font-black">PEAK</span>
           <span className="font-light">FITNESS</span>
         </Link>
 
-        {/* CLUSTERED NAV - Pushed to the right but before the button */}
-        <div className="hidden lg:flex items-center gap-12 xl:gap-20">
-          <nav className="flex items-center gap-10 xl:gap-14">
+        {/* CLUSTERED NAV - Pushed to the right with micro-typography */}
+        <div className="hidden lg:flex items-center gap-16 xl:gap-24">
+          <nav className="flex items-center gap-10 xl:gap-12">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="font-testimonial text-xs xl:text-sm uppercase tracking-[0.3em] text-white hover:text-white/70 transition-colors font-bold"
+                className="font-testimonial text-[9px] xl:text-[10px] uppercase tracking-[0.4em] text-white hover:text-white/60 transition-colors font-bold"
               >
                 {link.name}
               </Link>
@@ -42,7 +43,7 @@ export default function Header() {
 
           <Link
             href="/contact"
-            className="rounded-full bg-demco-purple/90 text-white border-none py-4 px-10 text-sm xl:text-base font-testimonial tracking-[0.2em] hover:bg-demco-purple transition-colors shadow-lg"
+            className="rounded-full bg-demco-purple/90 text-white border-none py-3 px-10 text-[9px] xl:text-[10px] font-testimonial tracking-[0.3em] hover:bg-demco-purple transition-all shadow-xl leading-none flex items-center justify-center uppercase"
           >
             BOOK NOW
           </Link>
@@ -53,24 +54,24 @@ export default function Header() {
           className="lg:hidden text-white p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* MOBILE MENU */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-demco-cream h-screen w-full fixed inset-0 z-[110] flex flex-col items-center justify-center space-y-10">
+        <div className="lg:hidden bg-demco-cream h-screen w-full fixed inset-0 z-[110] flex flex-col items-center justify-center space-y-8">
           <button
-            className="absolute top-10 right-10 text-demco-purple"
+            className="absolute top-8 right-8 text-demco-purple"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <X size={48} />
+            <X size={36} />
           </button>
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="font-heading text-5xl uppercase tracking-widest text-demco-purple font-bold"
+              className="font-heading text-4xl uppercase tracking-widest text-demco-purple font-bold"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
@@ -78,7 +79,7 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="btn-pill btn-primary text-3xl mt-12 px-20 py-8"
+            className="btn-pill btn-primary text-2xl mt-8 px-16 py-6"
             onClick={() => setMobileMenuOpen(false)}
           >
             BOOK NOW
