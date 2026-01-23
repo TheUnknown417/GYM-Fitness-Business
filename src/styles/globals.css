@@ -10,7 +10,7 @@
 }
 
 body {
-  @apply bg-demco-cream text-demco-purple selection:bg-demco-purple selection:text-white;
+  @apply bg-demco-cream text-demco-purple selection:bg-demco-purple selection:text-white relative;
 }
 
 h1,
@@ -63,6 +63,18 @@ p {
   .img-animate {
     @apply grayscale transition-all duration-700 hover:grayscale-0 cursor-pointer;
   }
+
+  /* Footer Reveal Effect */
+  .main-content-wrapper {
+    @apply relative z-10 bg-demco-cream;
+    /* This ensures content above footer has a background and higher z-index */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  }
+
+  .footer-reveal-container {
+    @apply sticky bottom-0 z-0 h-auto;
+    /* Sticky bottom + z-0 makes it stay behind the main content until revealed */
+  }
 }
 
 /* Custom Spacing Patterns */
@@ -77,21 +89,17 @@ p {
 /* Masonry Overrides */
 .my-masonry-grid {
   display: -webkit-box;
-  /* Not needed if lib handles it */
   display: -ms-flexbox;
   display: flex;
-  margin-left: -30px;
-  /* gutter size offset */
+  margin-left: -40px;
   width: auto;
 }
 
 .my-masonry-grid_column {
-  padding-left: 30px;
-  /* gutter size */
+  padding-left: 40px;
   background-clip: padding-box;
 }
 
-/* Style for individual masonry items */
 .my-masonry-grid_column>div {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
