@@ -33,27 +33,27 @@ export default function MembershipsPage() {
   return (
     <main className="bg-demco-cream">
       {/* HERO */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[65vh] flex items-center justify-center overflow-hidden">
         <Image
           src={images.hero.memberships}
           alt="Memberships"
           fill
-          className="object-cover brightness-75"
+          className="object-cover brightness-[0.7]"
         />
-        <div className="absolute inset-0 bg-demco-purple/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
 
-        <div className="relative z-10 text-center text-demco-offwhite px-4 container-demco">
+        <div className="relative z-10 text-center text-demco-offwhite px-4 container-demco mt-20 md:mt-24">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="section-label !text-demco-cream mb-6"
+            className="font-testimonial text-[10px] md:text-xs uppercase tracking-[0.5em] mb-4 opacity-80"
           >
-            Membership Options
+            MEMBERSHIP OPTIONS
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-8xl font-heading leading-tight"
+            className="text-5xl md:text-8xl lg:text-9xl font-heading leading-[0.9] tracking-tighter"
           >
             DISCOVER YOUR<br />FITNESS PATH.
           </motion.h1>
@@ -73,7 +73,7 @@ export default function MembershipsPage() {
               className={`grid lg:grid-cols-12 gap-16 items-center`}
             >
               <div className={`lg:col-span-7 relative group ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <div className="aspect-[16/10] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+                <div className="aspect-[16/10] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 shadow-xl">
                   <Image
                     src={tier.image}
                     alt={tier.name}

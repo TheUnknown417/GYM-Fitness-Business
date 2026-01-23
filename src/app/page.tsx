@@ -37,22 +37,22 @@ export default function HomePage() {
           className="object-cover brightness-[0.75]"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-demco-purple/10 to-demco-purple/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-demco-purple/10 to-demco-purple/50 pointer-events-none" />
 
-        <div className="relative z-10 text-center text-demco-offwhite px-4 container-demco">
+        <div className="relative z-10 text-center text-demco-offwhite px-4 container-demco mt-24 md:mt-32">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-testimonial text-xs md:text-sm uppercase tracking-[0.4em] mb-8"
+            className="font-testimonial text-[10px] md:text-xs uppercase tracking-[0.5em] mb-6 opacity-80"
           >
             ELEVATE YOUR LIFE
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl md:text-8xl lg:text-[13rem] font-heading mb-12 leading-[0.8] tracking-tighter"
+            className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading mb-12 leading-[0.9] tracking-tighter"
           >
             FIND YOUR<br />MOVEMENT.
           </motion.h1>
@@ -65,13 +65,13 @@ export default function HomePage() {
           >
             <Link
               href="/memberships"
-              className="btn-pill bg-white text-demco-purple border-white hover:bg-transparent hover:text-white text-xl px-16 py-7"
+              className="rounded-full bg-white text-demco-purple border-none py-5 px-14 text-[10px] md:text-xs font-testimonial tracking-[0.3em] hover:bg-white/90 transition-all uppercase"
             >
               START YOUR JOURNEY
             </Link>
             <Link
               href="/contact"
-              className="font-testimonial text-sm uppercase tracking-[0.3em] hover:text-white transition-all underline underline-offset-8"
+              className="font-testimonial text-[10px] md:text-xs uppercase tracking-[0.3em] hover:text-white transition-all underline underline-offset-8"
             >
               FIRST CLASS FREE
             </Link>
@@ -90,7 +90,7 @@ export default function HomePage() {
             className="max-w-6xl mx-auto text-center space-y-12"
           >
             <motion.p variants={itemVariants} className="section-label">WHY WE MOVE</motion.p>
-            <motion.h2 variants={itemVariants} className="text-5xl md:text-[10rem] font-heading text-demco-purple leading-[0.8] tracking-tighter">
+            <motion.h2 variants={itemVariants} className="text-5xl md:text-8xl lg:text-9xl font-heading text-demco-purple leading-[0.8] tracking-tighter">
               MORE THAN A WORKOUT.
             </motion.h2>
             <motion.div variants={itemVariants} className="h-2 bg-demco-purple w-48 mx-auto" />

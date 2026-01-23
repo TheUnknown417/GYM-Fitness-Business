@@ -80,27 +80,27 @@ export default function TestimonialsPage() {
   return (
     <main className="bg-demco-cream min-h-screen">
       {/* HERO */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[65vh] flex items-center justify-center overflow-hidden">
         <Image
           src={images.hero.testimonials}
           alt="Testimonials"
           fill
-          className="object-cover brightness-50"
+          className="object-cover brightness-[0.7]"
         />
-        <div className="absolute inset-0 bg-demco-purple/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
 
-        <div className="relative z-10 text-center text-demco-offwhite px-4 container-demco">
+        <div className="relative z-10 text-center text-demco-offwhite px-4 container-demco mt-20 md:mt-24">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="section-label !text-demco-cream mb-6"
+            className="font-testimonial text-[10px] md:text-xs uppercase tracking-[0.5em] mb-4 opacity-80"
           >
             WHAT OUR CLIENTS SAY
           </motion.p>
           <motion.h1
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-6xl md:text-8xl font-heading leading-tight"
+            className="text-6xl md:text-8xl lg:text-9xl font-heading leading-[0.9] tracking-tighter"
           >
             SUCCESS<br />STORIES.
           </motion.h1>
@@ -108,9 +108,9 @@ export default function TestimonialsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="mt-8"
+            className="mt-10"
           >
-            <Link href="#reviews" className="btn-pill btn-secondary border-white text-white hover:bg-white hover:text-demco-purple">
+            <Link href="#reviews" className="rounded-full bg-white text-demco-purple border-none py-4 px-12 text-[10px] md:text-xs font-testimonial tracking-[0.3em] hover:bg-white/90 transition-all uppercase">
               MORE REVIEWS
             </Link>
           </motion.div>
@@ -137,7 +137,7 @@ export default function TestimonialsPage() {
                   variants={itemVariants}
                   className="bg-demco-offwhite p-10 space-y-8 flex flex-col"
                 >
-                  <div className="relative aspect-square overflow-hidden img-animate">
+                  <div className="relative aspect-square overflow-hidden img-animate grayscale">
                     <Image
                       src={review.image}
                       alt={review.name}
@@ -160,7 +160,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* NEWSLETTER SECTION (Matched to screenshot) */}
-      <section className="py-24 bg-[#E5E5E5] border-t border-b border-gray-300">
+      <section className="py-24 bg-[#E5E5E5] border-t border-gray-300">
         <div className="container-demco grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-heading leading-tight">
@@ -175,10 +175,10 @@ export default function TestimonialsPage() {
               <input
                 type="email"
                 placeholder="EMAIL ADDRESS"
-                className="w-full bg-white px-6 py-5 font-testimonial text-sm focus:outline-none placeholder:text-gray-400"
+                className="w-full bg-white px-6 py-5 font-testimonial text-sm focus:outline-none placeholder:text-gray-400 border border-gray-200"
               />
             </div>
-            <button className="btn-pill bg-black text-white hover:bg-demco-purple border-none px-12 py-4 font-heading tracking-widest text-base">
+            <button className="rounded-full bg-black text-white hover:bg-demco-purple border-none px-12 py-4 font-heading tracking-widest text-xs uppercase transition-all shadow-md">
               SIGN UP
             </button>
           </div>

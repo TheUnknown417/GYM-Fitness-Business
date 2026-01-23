@@ -36,14 +36,21 @@ export default function AboutPage() {
           className="object-cover brightness-[0.7]"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
 
-        <div className="relative z-10 text-center text-demco-offwhite px-4">
+        <div className="relative z-10 text-center text-demco-offwhite px-4 mt-20 md:mt-24">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="font-testimonial text-[10px] md:text-xs uppercase tracking-[0.5em] mb-4 opacity-80"
+          >
+            OUR STORY
+          </motion.p>
           <motion.h1
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl md:text-[10rem] lg:text-[12rem] font-heading leading-[0.8] tracking-tighter"
+            className="text-6xl md:text-8xl lg:text-9xl font-heading leading-[0.9] tracking-tighter"
           >
             ABOUT<br />PEAK.
           </motion.h1>
@@ -141,7 +148,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[12vw] font-heading leading-none tracking-tighter"
+            className="text-[10vw] font-heading leading-none tracking-tighter"
           >
             MEET OUR COACHES.
           </motion.h1>
