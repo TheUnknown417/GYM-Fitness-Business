@@ -24,6 +24,9 @@ import img_new_gym_1 from './pexels-ivan-s-4164758.jpg';
 import img_new_gym_2 from './pexels-ketut-subiyanto-4853698.jpg';
 import img_new_gym_3 from './pexels-olly-3768913.jpg';
 
+// MALE PORTRAIT (V8)
+import img_male_coach from './vitaly-gariev-8a4vflYr7gs-unsplash.jpg';
+
 export const images = {
   // HERO IMAGES (Local)
   hero: {
@@ -35,9 +38,9 @@ export const images = {
 
   // COACHES (Using high-quality portraits)
   coaches: [
-    img_new_portrait_1, // Sarah
-    img_new_portrait_2, // Mike
-    img_new_portrait_3, // Alex
+    img_new_portrait_1, // Sarah (Female)
+    img_male_coach,      // Mike (Male - Fixed V8)
+    img_new_portrait_3, // Alex (Female)
     img_gal_2,          // Extra
     img_gal_4,          // Extra
     img_gal_6,          // Extra
@@ -68,7 +71,7 @@ export const images = {
   // TESTIMONIALS (Using unique new portrait and gym shots)
   testimonials: [
     img_new_portrait_1,
-    img_new_portrait_2,
+    img_male_coach,
     img_new_portrait_3,
     img_new_gym_1,
     img_new_gym_2,

@@ -65,7 +65,7 @@ export default function AboutPage() {
             </motion.h2>
             <motion.div variants={itemVariants} className="space-y-8">
               <p className="font-testimonial text-lg md:text-xl leading-relaxed text-demco-purple text-justify opacity-90">
-                AT PEAK, YOU ARE SURROUNDED BY A TEAM OF PASSIONATE AND KNOWLEDGEABLE COACHES WHO ARE DEDICATED TO HELPING YOU BECOME A BETTER VERSION OF YOURSELF. THE PEAKFITNESS GYM AND COMMUNITY WILL MOTIVATE, INSPIRE, ENCOURAGE, AND PUSH YOU TO REACH AND EXCEED YOUR GOALS. WE HELP YOU PERFORM BETTER, LOOK GOOD, AND FEEL AMAZING.
+                AT PEAK, YOU ARE SURROUNDED BY A TEAM OF PASSIONATE AND KNOWLEDGEABLE COACHES WHO ARE DEDICATED TO HELPING YOU BECOME A BETTER VERSION OF YOURSELF. THE <span className="font-black">PEAK</span><span className="font-medium">FITNESS</span> GYM AND COMMUNITY WILL MOTIVATE, INSPIRE, ENCOURAGE, AND PUSH YOU TO REACH AND EXCEED YOUR GOALS. WE HELP YOU PERFORM BETTER, LOOK GOOD, AND FEEL AMAZING.
               </p>
               <p className="font-testimonial text-lg md:text-xl leading-relaxed text-demco-purple text-justify opacity-90">
                 WE FOCUS ON MOVEMENT, MOBILITY, AGILITY, AND STRENGTH TRAINING IN THE MOST EFFICIENT, SAFE, AND FUN WAY POSSIBLE. FOR US, IT IS NOT JUST A WORKOUT, IT IS ABOUT YOU CHANGING YOUR LIFESTYLE, ENJOYING MOVEMENT, AND GETTING STRONGER AND HEALTHIER.
@@ -127,7 +127,7 @@ export default function AboutPage() {
             <motion.div variants={itemVariants} className="space-y-12">
               <h2 className="text-7xl md:text-9xl font-heading text-demco-purple leading-none tracking-tighter hover:text-demco-olive transition-colors">OUR MISSION</h2>
               <p className="font-testimonial text-lg md:text-xl leading-relaxed text-demco-purple text-justify opacity-80">
-                PEAKFITNESS IS AN ENVIRONMENT THAT IS FILLED WITH LAUGHTER, LOVE, STRENGTH AND FUN. IT IS IMPORTANT TO HAVE A SPACE AND COMMUNITY THAT EMBODIES DEDICATION, HARD WORK AND SUPPORT AND PEAKFITNESS IS JUST THAT. OUR COMMUNITY IS WHAT MAKES THE GYM SO SPECIAL. YOU WON'T FIND ANOTHER PLACE WHERE YOU DEVELOP STRENGTH, MAINTAIN AND GAIN HEALTH, BUT ALSO HAVE A COMMUNITY OF INDIVIDUALS THAT TRULY BECOME YOUR FRIENDS.
+                <span className="font-black">PEAK</span><span className="font-medium">FITNESS</span> IS AN ENVIRONMENT THAT IS FILLED WITH LAUGHTER, LOVE, STRENGTH AND FUN. IT IS IMPORTANT TO HAVE A SPACE AND COMMUNITY THAT EMBODIES DEDICATION, HARD WORK AND SUPPORT AND <span className="font-black">PEAK</span><span className="font-medium">FITNESS</span> IS JUST THAT. OUR COMMUNITY IS WHAT MAKES THE GYM SO SPECIAL. YOU WON'T FIND ANOTHER PLACE WHERE YOU DEVELOP STRENGTH, MAINTAIN AND GAIN HEALTH, BUT ALSO HAVE A COMMUNITY OF INDIVIDUALS THAT TRULY BECOME YOUR FRIENDS.
               </p>
             </motion.div>
           </motion.div>
@@ -151,7 +151,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-16 lg:gap-24">
             {[
               { name: 'SARAH JOHNSON', role: 'OWNER + HEAD COACH', img: images.coaches[0] },
-              { name: 'MIKE CHENG', role: 'STRENGTH COACH', img: images.coaches[1] },
+              { name: 'MIKE CHEN', role: 'STRENGTH COACH', img: images.coaches[1] },
               { name: 'ALEX RIVERA', role: 'MOBILITY SPECIALIST', img: images.coaches[2] },
             ].map((coach, i) => (
               <motion.div
@@ -177,23 +177,6 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* FOOTER PUSH SECTION */}
-      <section className="h-[70vh] relative overflow-hidden">
-        <Image
-          src={images.training[2]}
-          alt="Gym Detail"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center space-y-8 px-4 text-center">
-          <h2 className="text-6xl md:text-[12rem] lg:text-[14rem] text-white font-heading tracking-tighter leading-none">
-            <span className="font-black">PEAK</span>
-            <span className="font-bold">FITNESS</span>.
-          </h2>
-          <div className="h-2 bg-white w-64 mx-auto" />
         </div>
       </section>
     </main>

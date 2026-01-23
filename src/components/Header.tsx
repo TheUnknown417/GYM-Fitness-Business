@@ -17,10 +17,10 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-[100] bg-demco-cream/80 backdrop-blur-md border-b border-demco-purple/10">
       <div className="container-demco flex items-center justify-between py-6 md:py-8 lg:px-12">
-        {/* LOGO - PEAK (Black) FITNESS (Bold) */}
+        {/* LOGO - PEAK (Black) FITNESS (Medium) */}
         <Link href="/" className="text-5xl md:text-6xl lg:text-7xl font-heading tracking-tighter text-demco-purple hover:opacity-80 transition-opacity flex items-baseline">
           <span className="font-black">PEAK</span>
-          <span className="font-semibold lg:font-bold">FITNESS</span>
+          <span className="font-medium">FITNESS</span>
         </Link>
 
         {/* DESKTOP NAV */}
